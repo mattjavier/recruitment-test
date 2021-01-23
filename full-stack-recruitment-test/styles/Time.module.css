@@ -1,0 +1,16 @@
+.time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.flightTime {
+  color: #111236;
+  margin: 0;
+}
+
+.airport {
+  color: #8f90a0;
+  margin: 0;
+}

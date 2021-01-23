@@ -2,7 +2,7 @@ import React from 'react';
 
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
-// import Time from '../Time';
+import Time from '../Time';
 
 import styles from '../../styles/Flight.module.css';
 
@@ -31,12 +31,12 @@ const Flight = props => {
         />
         
         {/* Departure */}
-        {/* <Time 
+        <Time 
           info={{ 
             airport: props.flight.departure_airport, 
             time: props.flight.departure_time
           }}
-        /> */}
+        />
 
         {/* Flight Icon  */}
         <div className={styles.flightIcon}>
@@ -44,12 +44,12 @@ const Flight = props => {
         </div>
 
         {/* Arrival */}
-        {/* <Time 
+        <Time 
           info={{ 
             airport: props.flight.arrival_airport, 
             time: props.flight.arrival_time
           }}
-        /> */}
+        />
       </div>
       <div className={styles.right}>
         {/* Flight Duration */}
