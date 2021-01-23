@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import Leg from '../Leg';
+import Leg from '../Leg';
 
 import styles from '../../styles/Itinerary.module.css';
 
@@ -15,14 +15,14 @@ const Itinerary = props => {
     <div className={styles.itinerary}>
       <div className={styles.top}>
         {/* Leg 1 */}
-        {/* <Leg 
+        <Leg 
           leg={props.itinerary.legs[0]}
-        /> */}
+        />
 
         {/* Leg 2 */}
-        {/* <Leg
+        <Leg
           leg={props.itinerary.legs[1]}
-        /> */}
+        />
       </div>
       <div className={styles.bottom}>
 
