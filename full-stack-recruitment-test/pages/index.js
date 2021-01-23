@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import Header from '../components/Header';
+import Flights from '../components/Flights';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
       <Header />
       <main className={styles.main}>
-        
+        <Flights />
       </main>
 
       <footer className={styles.footer}>

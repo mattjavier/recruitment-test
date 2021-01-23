@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <a href="/">
+        <span className={styles.hiddenText}>Skyscanner</span>
         <img
           className={styles.logoImage}
           alt="Skyscanner"
