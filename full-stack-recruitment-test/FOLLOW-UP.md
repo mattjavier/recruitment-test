@@ -2,11 +2,11 @@
 
 ### Q) What libraries did you add to the frontend? What are they used for?
 
-I used the provided Backpack library as well as my own css for styling the frontend. Backpack provided many components such as cards and icons that were useful in keeping the design of the Skyscanner app consistent. This allowed for a unified design rather than using multiple libraries. 
+Because this was done using Next.js, I couldn't configure the Backpack library provided. That being said, I used the Backpack documentation for their components to make my own using css. One additional library used was the Material-UI Icons. This was used for the arrow showing a flight's departure and arrival.
 
 ### Q) What's the command to start the application locally?
 
-(Default) `npm start`
+npm run dev
 
 ---
 
@@ -22,8 +22,8 @@ I'm most proud of my design and use of components. Each component heavily uses f
 
 ### Q) Which parts did you spend the most time with? What did you find most difficult?
 
-First off, understanding the environment was the most difficult. The solution itself, the act of coming up with a readable and aesthetically pleasing way to display flights was easy compared to understanding the environment. Going through all the files and understanding what was given to me and what route I should take in starting proved to be more time consuming than implementing certain components.
+First off, understanding the environment was the most difficult. The solution itself, the act of coming up with a readable and aesthetically pleasing way to display flights was easy compared to understanding the environment. Going through all the files and understanding what was given to me and what route I should take in starting proved to be more time consuming than implementing certain components. Additionally, using Next.js proved challenging as I only have experience with React.js. Learning how Next.js works in order to deploy was a new way for me to learn a new technology.
 
 ### Q) How did you find the test overall? Did you have any issues or have difficulties completing? If you have any suggestions on how we can improve the test, we'd love to hear them.
 
-I found the test enjoyable. Having to understand some unfamiliar technologies, then using those technologies to create a working app is rewarding. The only issues I've run into developing this app is some of the documentation for the Backpack framework is unclear, leading me to look into the `node_modules` folder for how to implement some components. 
+I found the test enjoyable. Having to understand some unfamiliar technologies, then using those technologies to create a working app is rewarding. Learning new technologies is always daunting at first, but the satisfaction in completing a project using something new is what makes developing interesting.
