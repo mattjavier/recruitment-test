@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// import Flight from '../Flight';
+import Flight from '../Flight';
 
 import styles from '../../styles/Leg.module.css';
 
@@ -37,12 +37,10 @@ const Leg = props => {
   }, []);
 
   return (
-    // <Flight
-    //   flight={legState.leg}
-    //   className={getClassName('Leg')} 
-    // />
-    <>
-    </>
+    <Flight
+      flight={legState.leg}
+      className={styles.leg} 
+    />
   );
 }
 
