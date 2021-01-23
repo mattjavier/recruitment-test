@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// import Itinerary from '../Itinerary';
+import Itinerary from '../Itinerary';
 
 import styles from '../../styles/Flights.module.css';
 
@@ -26,14 +26,14 @@ const Flights = () => {
   return (
     <div className={styles.container}>
       {
-        // flightsState.itineraries.map(itinerary => {
-        //   return (
-        //     <Itinerary 
-        //       key={itinerary.id}
-        //       itinerary={itinerary}
-        //     />
-        //   );
-        // })
+        flightsState.itineraries.map(itinerary => {
+          return (
+            <Itinerary 
+              key={itinerary.id}
+              itinerary={itinerary}
+            />
+          );
+        })
       }
     </div>
   );
