@@ -35,6 +35,8 @@ const Home = () => {
         <title>Skyscanner</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {/* Header */}
       <Header />
       <Grid
         container
@@ -43,6 +45,7 @@ const Home = () => {
         alignItems="center"
         className={classes.main}
       >
+        {/* List of Itineraries */}
         <Flights />
       </Grid>
 
