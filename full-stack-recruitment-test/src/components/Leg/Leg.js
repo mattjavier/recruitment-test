@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -37,37 +37,6 @@ const useStyles = makeStyles((theme) => ({
 const Leg = props => {
   const classes = useStyles();
 
-  const [legState, setLegState] = useState({
-    leg: {
-      id: '',
-      departure_airport: '',
-      arrival_airport: '',
-      departure_time: '',
-      arrival_time: '',
-      stops: '',
-      airline_name: '',
-      airline_id: '',
-      duration_mins: ''
-    }
-  });
-
-  useEffect(() => {
-    fetch('./flights.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then(res => res.json())
-      .then(({ legs }) => {
-        setLegState({ 
-          ...legState, 
-          leg: legs.find(item => item.id === props.leg)
-        });
-      })
-      .catch(err => console.log(err));
-  }, []);
-
   return (
     <Grid
       container
@@ -84,7 +53,7 @@ const Leg = props => {
       >
         {/* Airline Logo */}
         <img 
-          src={`https://logos.skyscnr.com/images/airlines/favicon/${legState.leg.airline_id}.png`} 
+          src={`https://logos.skyscnr.com/images/airlines/favicon/${props.leg.airline_id}.png`} 
           alt="Airline Logo"
           className={classes.logo}
         />
@@ -92,8 +61,8 @@ const Leg = props => {
         {/* Departure */}
         <Time 
           info={{ 
-            airport: legState.leg.departure_airport, 
-            time: legState.leg.departure_time
+            airport: props.leg.departure_airport, 
+            time: props.leg.departure_time
           }}
         />
 
@@ -105,8 +74,8 @@ const Leg = props => {
         {/* Arrival */}
         <Time 
           info={{ 
-            airport: legState.leg.arrival_airport, 
-            time: legState.leg.arrival_time
+            airport: props.leg.arrival_airport, 
+            time: props.leg.arrival_time
           }}
         />
       </Grid>
@@ -121,17 +90,17 @@ const Leg = props => {
         <Typography
           color="textSecondary" 
         >
-          {`${hours(legState.leg.duration_mins)}h ${minutes(legState.leg.duration_mins)}`}
+          {`${hours(props.leg.duration_mins)}h ${minutes(props.leg.duration_mins)}`}
         </Typography>
         
         {/* Potential Stops */}
         {
-          legState.leg.stops > 0 ? (
+          props.leg.stops > 0 ? (
             <Typography
               color="error"
             >
-              {legState.leg.stops} {
-                legState.leg.stops > 1 ? ('Stops') : ('Stop')
+              {props.leg.stops} {
+                props.leg.stops > 1 ? ('Stops') : ('Stop')
               }
             </Typography>
           ) : (

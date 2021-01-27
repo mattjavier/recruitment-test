@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
@@ -12,27 +12,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Flights = () => {
+const Flights = props => {
 
   const classes = useStyles();
-
-  const [flightsState, setFlightsState] = useState({
-    itineraries: []
-  });
-  
-  useEffect(() => {
-    fetch('./flights.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then(res => res.json())
-      .then(({ itineraries })=> {
-        setFlightsState({ ...flightsState, itineraries });
-      })
-      .catch(err => console.log(err));
-  }, []);
 
   return (
     <Grid
@@ -43,11 +25,12 @@ const Flights = () => {
       className={classes.container}
     >
       {
-        flightsState.itineraries.map(itinerary => {
+        props.itineraries.map(itinerary => {
           return (
             <Itinerary 
               key={itinerary.id}
               itinerary={itinerary}
+              legs={props.legs}
             />
           );
         })

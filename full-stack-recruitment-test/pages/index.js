@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { makeStyles } from '@material-ui/core/styles';
-
 import Grid from '@material-ui/core/Grid';
 
 import Header from '../src/components/Header';
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Home = () => {
+const Home = props => {
 
   const classes = useStyles();
 
@@ -46,7 +45,10 @@ const Home = () => {
         className={classes.main}
       >
         {/* List of Itineraries */}
-        <Flights />
+        <Flights 
+          itineraries={props.itineraries}
+          legs={props.legs}
+        />
       </Grid>
 
       <footer className={styles.footer}>
@@ -61,6 +63,18 @@ const Home = () => {
       </footer>
     </Grid>
   );
+}
+
+export const getStaticProps = async () => {
+  const flights = await fetch('http://localhost:3000/api/flights');
+  const json = await flights.json();
+
+  return {
+    props: { 
+      itineraries: json.itineraries, 
+      legs: json.legs
+    }
+  }
 }
 
 export default Home;

@@ -49,12 +49,12 @@ const Itinerary = props => {
       >
         {/* Leg 1 */}
         <Leg 
-          leg={props.itinerary.legs[0]}
+          leg={props.legs.find(item => item.id === props.itinerary.legs[0])}
         />
 
         {/* Leg 2 */}
         <Leg
-          leg={props.itinerary.legs[1]}
+          leg={props.legs.find(item => item.id === props.itinerary.legs[1])}
         />
       </Grid>
       <Grid 
