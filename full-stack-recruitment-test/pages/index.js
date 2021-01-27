@@ -68,8 +68,6 @@ const Home = props => {
 }
 
 export const getStaticProps = async () => {
-  // const flights = await fetch('http://localhost:3000/api/flights');
-  // const json = await flights.json();
   const json = flights;
 
   return {
