@@ -80,6 +80,7 @@ const Leg = props => {
         container
         alignItems="center"
         justify="space-between"
+        wrap="nowrap"
       >
         {/* Airline Logo */}
         <img 
