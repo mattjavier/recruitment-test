@@ -1,18 +1,42 @@
 import React from 'react';
-import styles from '../../styles/Header.module.css';
+import { makeStyles } from '@material-ui/core/styles';
+
+import Paper from '@material-ui/core/Paper';
+
+// import styles from '../../../styles/Header.module.css';
+
+const useStyles = makeStyles((theme) => ({
+  header: {
+    display: 'flex',
+    padding: theme.spacing(3),
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: '#ffffff'
+  },
+  logo: {
+    height: theme.spacing(6),
+    verticalAlign: 'top'
+  }
+}));
 
 const Header = () => {
+  const classes = useStyles();
+
   return (
-    <header className={styles.header}>
+    <Paper 
+      className={classes.header} 
+      elevation={3}
+      square
+    >
       <a href="/">
-        <span className={styles.hiddenText}>Skyscanner</span>
         <img
-          className={styles.logoImage}
+          className={classes.logo}
           alt="Skyscanner"
           src="/logo.svg"
         />
       </a>
-    </header>
+    </Paper>
   );
 }
 

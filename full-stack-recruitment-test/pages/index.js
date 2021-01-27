@@ -1,20 +1,50 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import { makeStyles } from '@material-ui/core/styles';
+
+import Grid from '@material-ui/core/Grid';
 
 import Header from '../src/components/Header';
-import Flights from '../src/components/Flights';
+// import Flights from '../src/components/Flights';
 
-export default function Home() {
+const useStyles = makeStyles((theme) => ({
+  container: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default
+  },
+  main: {
+    flexGrow: 1,
+    padding: theme.spacing(3, 0),
+    width: '100%'
+  }
+}));
+
+const Home = () => {
+
+  const classes = useStyles();
+
   return (
-    <div className={styles.container}>
+    <Grid 
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      className={classes.container}
+    >
       <Head>
         <title>Skyscanner</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className={styles.main}>
-        <Flights />
-      </main>
+      <Grid
+        container
+        direction="column"
+        justify="center" 
+        alignItems="center"
+        className={classes.main}
+      >
+        {/* <Flights /> */}
+      </Grid>
 
       <footer className={styles.footer}>
         <a
@@ -26,6 +56,8 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
-    </div>
-  )
+    </Grid>
+  );
 }
+
+export default Home;

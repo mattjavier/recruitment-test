@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 
-import Itinerary from '../Itinerary';
+// import Itinerary from '../Itinerary';
 
 import styles from '../../styles/Flights.module.css';
+
+const useStyles = makeStyles((theme) => {
+
+});
 
 const Flights = () => {
   const [flightsState, setFlightsState] = useState({
@@ -28,10 +33,10 @@ const Flights = () => {
       {
         flightsState.itineraries.map(itinerary => {
           return (
-            <Itinerary 
-              key={itinerary.id}
-              itinerary={itinerary}
-            />
+            // <Itinerary 
+            //   key={itinerary.id}
+            //   itinerary={itinerary}
+            // />
           );
         })
       }
