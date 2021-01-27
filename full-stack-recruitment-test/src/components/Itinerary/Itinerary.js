@@ -1,19 +1,54 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 import Leg from '../Leg';
 
-import styles from '../../styles/Itinerary.module.css';
+// import styles from '../../styles/Itinerary.module.css';
 
 const formatString = numStr => {
   let num = parseFloat(numStr).toFixed(1);
   return num.toString();
 }
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    flexDirection: 'column',
+    padding: theme.spacing(3),
+    marginBottom: theme.spacing(4),
+    backgroundColor: '#ffffff',
+    width: '100%'
+  },
+  section: {
+    width: '100%'
+  },
+  price: {
+    fontSize: theme.spacing(6),
+    margin: 0
+  },
+  agent: {
+    fontSize: theme.spacing(3),
+    margin: 0,
+    "& span": {
+      color: theme.palette.text.secondary
+    }
+  }
+}));
+
 const Itinerary = props => {
 
+  const classes = useStyles();
+
   return (
-    <div className={styles.itinerary}>
-      <div className={styles.top}>
+    <Card className={classes.root}>
+      <Grid 
+        item
+        className={classes.section}
+      >
         {/* Leg 1 */}
         <Leg 
           leg={props.itinerary.legs[0]}
@@ -23,23 +58,32 @@ const Itinerary = props => {
         <Leg
           leg={props.itinerary.legs[1]}
         />
-      </div>
-      <div className={styles.bottom}>
-
+      </Grid>
+      <Grid 
+        item
+        lg={12}
+      >
         {/* Flight Price */}
-        <p className={styles.price}>
+        <Typography
+          color="primary" 
+          className={classes.price}
+        >
           {props.itinerary.price}
-        </p>
+        </Typography>
 
         {/* Flight Agent and Rating */}
-        <p className={styles.agent}>
+        <Typography 
+          component="p"
+          color="textPrimary"
+          className={classes.agent}
+        >
           {props.itinerary.agent}
-          <span className={styles.agentRating}>
+          <span>
             &nbsp;({formatString(props.itinerary.agent_rating)})
           </span>
-        </p>
-      </div>
-    </div>
+        </Typography>
+      </Grid>
+    </Card>
   );
 }
 

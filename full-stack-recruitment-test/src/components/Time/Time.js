@@ -1,19 +1,42 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
-import styles from '../../styles/Time.module.css';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    paddingRight: theme.spacing(5)
+  }
+}));
+
+
+// import styles from '../../styles/Time.module.css';
 
 const Time = props => {
 
+  const classes = useStyles();
+
   return (
-    <div className={styles.time}>
-      <p className={styles.flightTime}>
+    <Grid
+      conatiner
+      direction="column"
+      justify="center" 
+      className={classes.root}
+    >
+      <Typography
+        color="primary" 
+        m={0}
+      >
         {props.info.time.substr(props.info.time.length - 5)}
-      </p>
-      <p className={styles.airport}>
+      </Typography>
+      <Typography
+        color="secondary"
+        m={0} 
+      >
         {props.info.airport}
-      </p>
-    </div>
-  )
-};
+      </Typography>
+    </Grid>
+  );
+}
 
 export default Time;

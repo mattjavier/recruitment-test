@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import Header from '../src/components/Header';
-// import Flights from '../src/components/Flights';
+import Flights from '../src/components/Flights';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -43,7 +43,7 @@ const Home = () => {
         alignItems="center"
         className={classes.main}
       >
-        {/* <Flights /> */}
+        <Flights />
       </Grid>
 
       <footer className={styles.footer}>

@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
-// import Itinerary from '../Itinerary';
+import Itinerary from '../Itinerary';
 
-import styles from '../../styles/Flights.module.css';
+// import styles from '../../styles/Flights.module.css';
 
-const useStyles = makeStyles((theme) => {
-
-});
+const useStyles = makeStyles((theme) => ({
+  container: {
+    padding: theme.spacing(3),
+    backgroundColor: theme.palette.background.default,
+    width: '100%'
+  }
+}));
 
 const Flights = () => {
+
+  const classes = useStyles();
+
   const [flightsState, setFlightsState] = useState({
     itineraries: []
   });
@@ -29,18 +37,24 @@ const Flights = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center" 
+      className={classes.container}
+    >
       {
         flightsState.itineraries.map(itinerary => {
           return (
-            // <Itinerary 
-            //   key={itinerary.id}
-            //   itinerary={itinerary}
-            // />
+            <Itinerary 
+              key={itinerary.id}
+              itinerary={itinerary}
+            />
           );
         })
       }
-    </div>
+    </Grid>
   );
 }
 
