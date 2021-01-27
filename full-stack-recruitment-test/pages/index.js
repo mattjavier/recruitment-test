@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import Header from '../src/components/Header';
 import Flights from '../src/components/Flights';
 
+import flights from '../public/flights.json';
+
 const useStyles = makeStyles((theme) => ({
   container: {
     flexGrow: 1,
@@ -66,8 +68,9 @@ const Home = props => {
 }
 
 export const getStaticProps = async () => {
-  const flights = await fetch('http://localhost:3000/api/flights');
-  const json = await flights.json();
+  // const flights = await fetch('http://localhost:3000/api/flights');
+  // const json = await flights.json();
+  const json = flights;
 
   return {
     props: { 
