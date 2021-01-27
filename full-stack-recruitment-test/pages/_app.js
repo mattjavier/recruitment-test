@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import theme from './theme.js';
+import theme from '../src/theme.js';
 
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
