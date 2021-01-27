@@ -6,9 +6,6 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 import Time from '../Time';
 
-// import styles from '../../styles/Leg.module.css';
-
-
 const hours = mins => {
   return Math.floor(mins / 60).toString();
 }

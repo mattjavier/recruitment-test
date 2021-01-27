@@ -4,8 +4,6 @@ import Grid from '@material-ui/core/Grid';
 
 import Itinerary from '../Itinerary';
 
-// import styles from '../../styles/Flights.module.css';
-
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: theme.spacing(3),

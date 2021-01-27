@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Paper from '@material-ui/core/Paper';
 
-// import styles from '../../../styles/Header.module.css';
-
 const useStyles = makeStyles((theme) => ({
   header: {
     display: 'flex',

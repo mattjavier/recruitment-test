@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
-// import styles from '../../styles/Time.module.css';
-
 const Time = props => {
 
   const classes = useStyles();

@@ -6,8 +6,6 @@ import Typography from '@material-ui/core/Typography';
 
 import Leg from '../Leg';
 
-// import styles from '../../styles/Itinerary.module.css';
-
 const formatString = numStr => {
   let num = parseFloat(numStr).toFixed(1);
   return num.toString();
